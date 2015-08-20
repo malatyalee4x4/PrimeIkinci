@@ -36,6 +36,8 @@ public class PersonelDAO {
             personel.setSoyad(rs.getString("soyad"));
             personel.setMaas(rs.getDouble("maas"));
             personel.setDogtar(Cevir.sqlToUtilDate(rs.getDate("dogtar")));
+            
+            personelListe.add(personel);
         }
         rs.close();
         VTBaglanti.BaglantiKapat(conn);

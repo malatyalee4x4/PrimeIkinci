@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./AnaTemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+
+                    <p:dataTable var="kisi" 
+                                 value="#{personelBean.personelListe}" 
+                                 paginator="true" 
+                                 rowsPerPageTemplate="3,4">
+
+                        <p:column headerText="No">
+                            <h:outputText value="#{kisi.no}"/>
+                        </p:column>
+                        <p:column headerText="Ad">
+                            <h:outputText value="#{kisi.ad}"/>
+                        </p:column>
+                        <p:column headerText="Soyad">
+                            <h:outputText value="#{kisi.soyad}"/>
+                        </p:column>
+                        <p:column headerText="Maaş">
+                            <h:outputText value="#{kisi.maas}"/>
+                        </p:column>
+                        <p:column headerText="Doğum Tarihi">
+
+                            <h:outputText value="#{kisi.dogtar}"><f:convertDateTime pattern="dd/MM/yyyy"/></h:outputText>
+
+                        </p:column>
+                        <p:column headerText="E-Posta">
+                            <h:outputText value="#{kisi.eposta}"/>
+                        </p:column>
+
+                    </p:dataTable>
+
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

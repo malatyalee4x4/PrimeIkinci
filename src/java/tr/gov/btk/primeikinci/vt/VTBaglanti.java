@@ -9,7 +9,7 @@ public class VTBaglanti {
     public static Connection BaglantiAc() throws ClassNotFoundException, SQLException
     {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.134:1521:orcl","kurs2", "kurs2");
+        Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.242:1521:orcl","kurs2", "kurs2");
         return conn;
     
     }
